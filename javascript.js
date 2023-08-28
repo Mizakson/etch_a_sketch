@@ -13,4 +13,6 @@ function createGrid(amtOfGrids) {
     }
 };
 
-createGrid(16);
+const sizeOfGrid = 16;
+
+createGrid(sizeOfGrid);
