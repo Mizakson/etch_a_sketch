@@ -15,7 +15,7 @@ function createGrid(amtOfGrids) {
             gridBox.style.height = `${widthAndHeight}px`;
 
             gridBox.addEventListener('mouseenter', () => {
-                gridBox.style.backgroundColor = 'darkgray';
+                gridBox.style.backgroundColor = 'darkblue';
             });
             row.appendChild(gridBox);
         }
