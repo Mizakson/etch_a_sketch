@@ -1,4 +1,5 @@
 const container = document.querySelector('.container');
+const resetButton = document.querySelector('button');
 
 const sizeOfGrid = 16;
 
@@ -23,5 +24,10 @@ function createGrid(amtOfGrids) {
         container.appendChild(row);
     }
 };
+
+resetButton.addEventListener('click', () => {
+    const userSize = Number.prompt('Enter desired grid dimensions... max of 100');
+    createGrid(userSize);
+})
 
 createGrid(sizeOfGrid);
