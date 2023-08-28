@@ -26,8 +26,12 @@ function createGrid(amtOfGrids) {
 };
 
 resetButton.addEventListener('click', () => {
-    const userSize = Number.prompt('Enter desired grid dimensions... max of 100');
-    createGrid(userSize);
-})
+    let userSize = Number(prompt('Enter desired grid dimensions... max of 100'));
+
+    while (userSize > 100) {
+        userSize = Number(prompt('Enter desired grid dimensions... max of 100'));
+        createGrid(userSize);
+    }
+});
 
 createGrid(sizeOfGrid);
