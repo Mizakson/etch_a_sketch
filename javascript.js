@@ -14,6 +14,7 @@ function createGrid(amtOfGrids) {
             gridBox.style.width = `${widthAndHeight}px`;
             gridBox.style.height = `${widthAndHeight}px`;
 
+            // event listener to change background color
             gridBox.addEventListener('mouseenter', () => {
                 gridBox.style.backgroundColor = 'darkblue';
             });
