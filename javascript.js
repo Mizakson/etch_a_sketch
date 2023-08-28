@@ -4,6 +4,10 @@ const resetButton = document.querySelector('button');
 const sizeOfGrid = 16;
 
 function createGrid(amtOfGrids) {
+    
+    const wrapper = document.createElement('div');
+    wrapper.classList.add('wrapper');
+    
     for (let i = 0; i < amtOfGrids; i++) {
         const row = document.createElement('div');
         row.classList.add('grid-row');
@@ -21,17 +25,20 @@ function createGrid(amtOfGrids) {
             });
             row.appendChild(gridBox);
         }
-        container.appendChild(row);
+        wrapper.appendChild(row);
     }
+    container.appendChild(wrapper);
 };
+
+createGrid(sizeOfGrid);
 
 resetButton.addEventListener('click', () => {
     let userSize = Number(prompt('Enter desired grid dimensions... max of 100'));
 
     while (userSize > 100) {
         userSize = Number(prompt('Enter smaller grid dimensions...'));
-        createGrid(userSize);
     }
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.remove();
+    createGrid(userSize);
 });
-
-createGrid(sizeOfGrid);
